@@ -19,6 +19,13 @@ class Yardsale < ActiveRecord::Base
   validates :description, :presence => true, :length => { :minimum => 10 }
 
   default_scope order: 'yardsales.created_at DESC'
+  
+  #after_initialize :init
+  
+  #def init 
+   # return unless new_record?
+    #self.address = self.user
+  #end
 
   def self.search(search)
     if search
